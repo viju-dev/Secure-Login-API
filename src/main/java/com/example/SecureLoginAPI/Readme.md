@@ -14,7 +14,7 @@ This project implements a backend REST API for user login and signup functionali
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your/repository.git`
+1. Clone the repository: `git clone https://github.com/viju-dev/Secure-Login-API.git`
 2. Navigate to the project directory: `cd SecureLoginAPI`
 3. Build the project: `mvn clean install`
 4. Run the application: `mvn spring-boot:run`
