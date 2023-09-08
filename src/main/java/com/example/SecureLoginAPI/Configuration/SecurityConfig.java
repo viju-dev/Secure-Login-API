@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class SecurityConfig {
@@ -35,7 +36,9 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.disable())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll().requestMatchers("/auth/SignUp").permitAll().requestMatchers("/Users/**").permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/home/**").authenticated()
+                        .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers("/auth/SignUp").permitAll().anyRequest().authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
@@ -61,4 +64,9 @@ public class SecurityConfig {
     }
 
 
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        // Use BCryptPasswordEncoder for password hashing
+//        return new BCryptPasswordEncoder();
+//    }
 }

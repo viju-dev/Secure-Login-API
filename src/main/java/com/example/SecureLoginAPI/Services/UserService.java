@@ -42,14 +42,24 @@ public class UserService {
     }
 
     // Get all users
-    public List<UserResponseDto> getUsers(){
-        List<UserResponseDto> list = new ArrayList<>();
+//    public List<UserResponseDto> getUsers(){
+//        List<UserResponseDto> list = new ArrayList<>();
+//        //converted all users to responseDtos to hide sensitive information and show what is required
+//        for (User u:userRepo.findAll()) {
+//            list.add(UserConvertor.EntityToDto(u));
+//        }
+//        return list;
+//    }
+
+    public List<String> getUsers(){
+        List<String> list = new ArrayList<>();
         //converted all users to responseDtos to hide sensitive information and show what is required
         for (User u:userRepo.findAll()) {
-            list.add(UserConvertor.EntityToDto(u));
+            list.add(u.getName());
         }
         return list;
     }
+
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity handleRuntimeException(RuntimeException e) {

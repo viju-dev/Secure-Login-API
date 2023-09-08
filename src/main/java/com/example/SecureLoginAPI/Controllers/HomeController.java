@@ -20,12 +20,20 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/hello")
+    public ResponseEntity hello(){
+        return new ResponseEntity<>("Hello From Greenstitch",HttpStatus.OK);
+    }
+
     // Endpoint to retrieve a list of all users
     @GetMapping("/getUsers")
     public ResponseEntity getUsers() {
         try {
             // Invoke the userService to get all users
-            List<UserResponseDto> users = userService.getUsers();
+
+//            List<UserResponseDto> users = userService.getUsers();
+
+            List<String> users = userService.getUsers();
             return new ResponseEntity<>(users, HttpStatus.OK);
         } catch (Exception e) {
             // Handle exception
@@ -37,8 +45,9 @@ public class HomeController {
     @GetMapping("/currentUser")
     public ResponseEntity getLoggedInUser(Principal principal) {
         try {
-            String username = principal.getName();
-            return new ResponseEntity<>(username, HttpStatus.OK);
+//            String username = principal.getName();
+//            return new ResponseEntity<>(username, HttpStatus.OK);
+            return new ResponseEntity<>(principal.getName(), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error retrieving logged-in user: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }

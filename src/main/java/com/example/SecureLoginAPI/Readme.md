@@ -64,6 +64,16 @@ This project implements a backend REST API for user login and signup functionali
     "username": "johndoe@example.com"
   }
   ```
+### Hello
+
+- URL: `/home/hello`
+- Method: `GET`
+- Description: Get a greeting from Greenstitch.
+- Response Body:
+  ```json
+  "Hello From Greenstitch"
+  ```
+
 
 ### Get Users
 
@@ -73,16 +83,9 @@ This project implements a backend REST API for user login and signup functionali
 - Response Body:
   ```json
   [
-    {
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "userInfo": "Additional user information"
-    },
-    {
-      "name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "userInfo": "Additional user information"
-    }
+    "John Doe",
+    "Iron Man",
+    "Tom Cruise"
   ]
   ```
 
@@ -113,6 +116,19 @@ This project implements a backend REST API for user login and signup functionali
 - jjwt-api
 - jjwt-impl
 - jjwt-jackson
+
+## Testing
+### Using Postman
+
+1. Open Postman.
+2. Create a new request.
+3. Set the request type to According`.
+4. Enter the URL of your endpoint (e.g., `http://localhost:8080/hello`).
+5. Add the Authorization token in Request header `Authorization`:`token value`
+6. Click the "Send" button.
+7. You should receive a response with "Hello from GreenStitch."
+8. Follow same method for other endpoints, `login` and `signup` endpoints don't require Auth token.
+![img.png](img.png)
 
 ## Project Structure
 
