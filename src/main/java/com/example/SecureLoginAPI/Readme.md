@@ -1,4 +1,4 @@
-
+![Screenshot 2023-09-08 130416](https://github.com/viju-dev/Secure-Login-API/assets/71461702/3bb904f4-571a-4254-af19-2ef7750ddaff)
 # Secure Login API
 
 This project implements a backend REST API for user login and signup functionality with security features and JSON Web Tokens (JWT) for authentication. It is built using the Spring Boot framework and utilizes the H2 database for storing user account information.
@@ -128,7 +128,8 @@ This project implements a backend REST API for user login and signup functionali
 6. Click the "Send" button.
 7. You should receive a response with "Hello from GreenStitch."
 8. Follow same method for other endpoints, `login` and `signup` endpoints don't require Auth token.
-![img.png](img.png)
+![Screenshot 2023-09-08 130416](https://github.com/viju-dev/Secure-Login-API/assets/71461702/8068abbe-1083-4236-8548-dbffe421bba7)
+
 
 ## Project Structure
 
